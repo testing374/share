@@ -18,4 +18,4 @@ def editor(fname):
             for i in [3,2,1,0]:
                 if temp[i][1] < y:
                     temp[i], temp[i+1] = temp[i+1], temp[i]        
-    print(t.lower(), [i[1] for i in temp])
+    print(t.lower(), [i[0] for i in temp])
