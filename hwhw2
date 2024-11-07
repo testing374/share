@@ -1,0 +1,21 @@
+
+import re
+from collections import Counter
+
+def editor(fname):
+    #YOUR CODE STARTS HERE
+    with open(fname) as f:
+        t = f.readline()
+    if t.isdigit():
+        return t[:10]
+
+    a = t.lower()
+    tt = Counter(t.replace(',','').split())
+    temp = [['',0],['',0],['',0],['',0],['',0]]
+    for x, y in tt.items():
+        if y > temp[4][1]:
+            temp[4] = [x,y]
+            for i in [3,2,1,0]:
+                if temp[i][1] < y:
+                    temp[i], temp[i+1] = temp[i+1], temp[i]        
+    print(t.lower(), [i[1] for i in temp])
