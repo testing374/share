@@ -9,7 +9,6 @@ def editor(fname):
     if t.isdigit():
         return t[:10]
 
-    a = t.lower()
     tt = Counter(t.replace(',','').split())
     temp = [['',0],['',0],['',0],['',0],['',0]]
     for x, y in tt.items():
